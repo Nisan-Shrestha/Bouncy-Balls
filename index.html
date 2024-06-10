@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="reset.css" />
   </head>
   <body>
-    <div class="container collider" id="collision-field"> 
-
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <h1 class="header">
+        Hover inside the container to see a soft deflection from mouse
+      </h1>
+      <div class="container collider" id="collision-field"></div>
+      <label for="count"> No of Balls, (press enter)</label><input type="number" id="count"  value="50" min="1" max="5000"/>
     </div>
     <script src="scripts/main.js" type="module"></script>
   </body>
