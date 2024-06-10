@@ -13,20 +13,20 @@ export const CheckCollisionCircles = (ballA, ballB, customHandle = false) => {
   if (!customHandle && dist <= sum) {
     // console.log("moved two balls");
     let newAvx =
-      ((ballA.r ** 2 - ballB.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) *
+      ((ballA.r ** 1.2 - ballB.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) *
         ballA.vx +
-      ((2 * ballB.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) * ballB.vx;
+      ((2 * ballB.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) * ballB.vx;
     let newAvy =
-      ((ballA.r ** 2 - ballB.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) *
+      ((ballA.r ** 1.2 - ballB.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) *
         ballA.vy +
-      ((2 * ballB.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) * ballB.vy;
+      ((2 * ballB.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) * ballB.vy;
     let newBvx =
-      ((2 * ballA.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) * ballA.vx +
-      ((ballB.r ** 2 - ballA.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) *
+      ((2 * ballA.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) * ballA.vx +
+      ((ballB.r ** 1.2 - ballA.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) *
         ballB.vx;
     let newBvy =
-      ((2 * ballA.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) * ballA.vy +
-      ((ballB.r ** 2 - ballA.r ** 2) / (ballA.r ** 2 + ballB.r ** 2)) *
+      ((2 * ballA.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) * ballA.vy +
+      ((ballB.r ** 1.2 - ballA.r ** 1.2) / (ballA.r ** 1.2 + ballB.r ** 1.2)) *
         ballB.vy;
 
     // TODO: Better default handler
@@ -46,6 +46,8 @@ export const CheckCollisionCircles = (ballA, ballB, customHandle = false) => {
     return true;
   }
 };
+
+
 export const CheckCollisionCircleRect = (
   circle,
   rect = "container",
